@@ -65,4 +65,9 @@
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
 </resources>
