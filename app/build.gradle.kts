@@ -39,6 +39,10 @@ android {
 }
 
 dependencies {
+    // RxJava
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation("com.jakewharton.rxbinding2:rxbinding:2.2.0")
+
     // paging3
     implementation("androidx.paging:paging-runtime-ktx:3.2.1")
 

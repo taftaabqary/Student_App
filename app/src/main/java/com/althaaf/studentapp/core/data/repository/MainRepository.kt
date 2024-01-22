@@ -7,10 +7,11 @@ import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.althaaf.studentapp.core.adapter.StudentPagingSource
 import com.althaaf.studentapp.core.data.local.datastore.UserPreference
+import com.althaaf.studentapp.core.data.local.model.UserModel
 import com.althaaf.studentapp.core.data.network.response.DataItem
 import com.althaaf.studentapp.core.data.network.retrofit.ApiService
 
-class DashboardRepository (
+class MainRepository (
     private val apiService: ApiService,
     private val dataStore: UserPreference
 ) {
@@ -25,13 +26,22 @@ class DashboardRepository (
             }
         ).liveData
     }
+
+    suspend fun saveUserToken() {
+        dataStore.saveUser(user = UserModel(token = "QpwL5tke4Pnpja7X4"))
+    }
+
+    suspend fun logout() {
+        dataStore.clearUser()
+    }
+
     companion object {
         @Volatile
-        private var instance: DashboardRepository? = null
+        private var instance: MainRepository? = null
 
-        fun getInstance(apiService: ApiService, dataStore: UserPreference): DashboardRepository =
+        fun getInstance(apiService: ApiService, dataStore: UserPreference): MainRepository =
             instance ?: synchronized(this) {
-                instance ?: DashboardRepository(apiService, dataStore)
+                instance ?: MainRepository(apiService, dataStore)
             }.also { instance = it }
     }
 }

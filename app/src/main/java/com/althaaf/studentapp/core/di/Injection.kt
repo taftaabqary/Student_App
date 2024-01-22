@@ -6,15 +6,15 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.althaaf.studentapp.core.data.local.datastore.UserPreference
 import com.althaaf.studentapp.core.data.network.retrofit.ApiConfig
-import com.althaaf.studentapp.core.data.repository.DashboardRepository
+import com.althaaf.studentapp.core.data.repository.MainRepository
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 object Injection {
 
-    fun provideDashboardRepository(context: Context): DashboardRepository {
+    fun provideMainRepository(context: Context): MainRepository {
         val apiService = ApiConfig.getApiService()
         val dataStore = UserPreference.getInstance(context.dataStore)
-        return  DashboardRepository.getInstance(apiService, dataStore)
+        return  MainRepository.getInstance(apiService, dataStore)
     }
 
     fun provideDataStore(context: Context): UserPreference {

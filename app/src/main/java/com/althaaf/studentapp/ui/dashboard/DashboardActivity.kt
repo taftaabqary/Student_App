@@ -1,4 +1,4 @@
-package com.althaaf.studentapp.ui
+package com.althaaf.studentapp.ui.dashboard
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
