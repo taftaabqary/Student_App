@@ -23,7 +23,6 @@ class StudentPagingSource(
             val page = params.key ?: INITIAL_PAGE_INDEX
             val responseData = apiService.getStudentsList(
                 token = "Bearer ${sessionUser.token}",
-                delay = 3,
                 page = page,
                 per_page = 4
             )

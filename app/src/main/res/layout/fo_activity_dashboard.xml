@@ -23,7 +23,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_contact"
+        android:id="@+id/rv_students"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginVertical="4dp"

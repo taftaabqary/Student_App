@@ -8,8 +8,13 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.althaaf.studentapp.databinding.FoItemLoadingBinding
 
-class LoadingStateAdapter(private val retry: () -> Unit): LoadStateAdapter<LoadingStateAdapter.LoadingStateViewHolder>() {
-    class LoadingStateViewHolder(private val binding: FoItemLoadingBinding, retry: () -> Unit): RecyclerView.ViewHolder(binding.retryButton) {
+class LoadingStateAdapter(private val retry: () -> Unit) :
+    LoadStateAdapter<LoadingStateAdapter.LoadingStateViewHolder>() {
+    class LoadingStateViewHolder(private val binding: FoItemLoadingBinding, retry: () -> Unit) :
+        RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.retryButton.setOnClickListener { retry.invoke() }
+        }
         fun bind(loadState: LoadState) {
             if (loadState is LoadState.Error) {
                 binding.errorMsg.text = loadState.error.localizedMessage
@@ -26,7 +31,8 @@ class LoadingStateAdapter(private val retry: () -> Unit): LoadStateAdapter<Loadi
         parent: ViewGroup,
         loadState: LoadState
     ): LoadingStateViewHolder {
-        val binding = FoItemLoadingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FoItemLoadingBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return LoadingStateViewHolder(binding, retry)
     }
 
@@ -36,6 +42,4 @@ class LoadingStateAdapter(private val retry: () -> Unit): LoadStateAdapter<Loadi
     ) {
         holder.bind(loadState)
     }
-
-
 }
