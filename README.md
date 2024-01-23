@@ -6,10 +6,10 @@
 Welcome to the Student App, a mobile application that allows you to view list of students based on ReqRes API.
 
 ## About the Project
-The UserApp mobile app follows the MVVM (Model-View-ViewModel) architecture pattern. In this pattern, the user interface components, like activities, observe real-time data updates from the view model. The view model retrieves the observed data from the data source layer, which consists of the model and repository. The data source layer serves as a connection between the API responses and the presentation layer (view and view model), enabling smooth data access for users.
+The mobile app follows the MVVM (Model-View-ViewModel) architecture pattern. In this pattern, the user interface components, like activities, observe real-time data updates from the view model. The view model retrieves the observed data from the data source layer, which consists of the model and repository. The data source layer serves as a connection between the API responses and the presentation layer (view and view model), enabling smooth data access for users.
 
 ## Mobile Tech Stack
-The UserApp mobile app is built using the following technologies:
+The mobile app is built using the following technologies:
 
 - Android Studio: The official IDE for Android app development.
 - Kotlin Programming Language: A modern programming language for developing Android apps.
@@ -24,7 +24,7 @@ The UserApp mobile app is built using the following technologies:
 - Lottie: An animation library for adding visually appealing animations to the app.
 
 ## API Mobile Documentation
-For detailed information about the UserApp API, please refer to the following documentation:
+For detailed information about the Student App API, please refer to the following documentation:
 [API Mobile Documentation](https://reqres.in/)
 
 ## Project Installation Guide
