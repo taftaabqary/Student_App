@@ -13,26 +13,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="TimeOut" />
+        android:text="@string/fo_timeout" />
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationLoading"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:visibility="gone"
         android:layout_gravity="center"
+        android:visibility="gone"
         app:lottie_autoPlay="true"
-        tools:visibility="visible"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/fo_animation_loading"
-        />
+        tools:ignore="ImageContrastCheck"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/retry_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Try again" />
+        android:text="@string/fo_try_again" />
 
 
 </LinearLayout>

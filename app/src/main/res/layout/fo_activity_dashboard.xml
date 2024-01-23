@@ -13,14 +13,27 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
-            android:background="@color/deep_red_2"
+            android:background="@color/fo_deep_red_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             app:title="ReqRes Students"
-            app:titleTextColor="@color/white_2"/>
+            app:menu="@menu/fo_top_app_bar"
+            app:titleTextColor="@color/fo_white_2"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationLoading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/fo_animation_loading"
+        tools:ignore="ImageContrastCheck"
+        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_students"

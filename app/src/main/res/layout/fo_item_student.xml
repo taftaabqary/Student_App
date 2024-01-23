@@ -17,13 +17,14 @@
         <ImageView
             android:id="@+id/avatar_student"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="180dp"
+            android:contentDescription="@string/fo_description_avatar"
+            android:scaleType="fitXY"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:scaleType="fitXY"
-            tools:src="@tools:sample/avatars"
-            android:contentDescription="Profile Picture Student" />
+            tools:ignore="ImageContrastCheck"
+            tools:src="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/fullname_student"
@@ -44,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
-            android:text="Address"
+            android:text="@string/fo_address"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fullname_student" />
 
@@ -54,6 +55,7 @@
             android:layout_height="18dp"
             android:layout_marginTop="4dp"
             android:src="@drawable/fo_icon_location"
+            android:contentDescription="@string/fo_description_location"
             app:layout_constraintStart_toStartOf="@id/tv_address"
             app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
@@ -68,6 +70,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_location"
             app:layout_constraintTop_toTopOf="@+id/iv_location"
-            tools:text="Alam Sutera, Jl. Jalur Sutera Bar. No.Kav. 7-9, RT.003/RW.006, Panunggangan Tim., Kec. Pinang, Kota Tangerang, Banten 15143" />
+            tools:text="Jl. Merdeka No. 123, Jakarta Selatan, DKI Jakarta, 12345" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

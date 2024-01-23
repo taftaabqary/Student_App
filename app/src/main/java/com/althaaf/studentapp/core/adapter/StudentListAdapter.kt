@@ -7,23 +7,39 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.althaaf.studentapp.R
 import com.althaaf.studentapp.core.data.network.response.DataItem
+import com.althaaf.studentapp.core.helper.RandomAddress
 import com.althaaf.studentapp.databinding.FoItemStudentBinding
 import com.bumptech.glide.Glide
 
-class StudentListAdapter: PagingDataAdapter<DataItem, StudentListAdapter.MyViewHolder>(DIFF_CALLBACK) {
-    class MyViewHolder(private val binding: FoItemStudentBinding): RecyclerView.ViewHolder(binding.root) {
+class StudentListAdapter :
+    PagingDataAdapter<DataItem, StudentListAdapter.MyViewHolder>(DIFF_CALLBACK) {
+    class MyViewHolder(private val binding: FoItemStudentBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(item: DataItem) {
+            val address = RandomAddress.getRandomAddress()
             Glide.with(itemView.context)
                 .load(item.avatar)
                 .into(binding.avatarStudent)
 
-            binding.fullnameStudent.text = itemView.context.getString(R.string.fo_fullname_student, item.firstName, item.lastName)
-            binding.addressStudent.text = "Perumahan Duta Bintaro, Kluster Nusa Dua, F10 NO 01"
+            binding.fullnameStudent.text = itemView.context.getString(
+                R.string.fo_fullname_student,
+                item.firstName,
+                item.lastName
+            )
+
+            binding.addressStudent.text = itemView.context.getString(
+                R.string.fo_address_student,
+                address.street,
+                address.city,
+                address.province,
+                address.postalCode
+            )
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val binding = FoItemStudentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            FoItemStudentBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MyViewHolder(binding)
     }
 

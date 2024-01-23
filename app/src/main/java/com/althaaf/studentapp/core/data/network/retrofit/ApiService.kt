@@ -9,7 +9,8 @@ interface ApiService {
     @GET("users")
     suspend fun getStudentsList(
         @Header("Authorization") token: String,
+        @Query("delay") delay: Int,
         @Query("page") page: Int,
-        @Query("per_page") per_page: Int
+        @Query("per_page") perPage: Int
     ) : StudentsListResponse
 }

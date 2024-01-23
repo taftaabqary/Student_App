@@ -2,5 +2,20 @@
     <string name="app_name">StudentApp</string>
 
     <string name="fo_fullname_student">%1s %2s</string>
+    <string name="fo_address_student">%1s, %2s, %3s, %4s</string>
+    <string name="fo_logout">Logout</string>
+    <string name="fo_description_logout">Logout from dashboard screen</string>
+    <string name="fo_description_logo">Logo application</string>
+    <string name="fo_title_login">Login into your account</string>
+    <string name="fo_login">Login</string>
+    <string name="fo_password">password</string>
+    <string name="fo_hint_username">alfagift-admin</string>
+    <string name="fo_title_ed_password">Your Password</string>
+    <string name="fo_title_ed_username">Your Username</string>
+    <string name="fo_timeout">TimeOut</string>
+    <string name="fo_description_avatar">Profile Picture Student</string>
+    <string name="fo_address">Address</string>
+    <string name="fo_description_location">Location Address Icon</string>
+    <string name="fo_try_again">Try again</string>
 
 </resources>

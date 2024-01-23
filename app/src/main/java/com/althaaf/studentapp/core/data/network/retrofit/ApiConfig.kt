@@ -8,9 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ApiConfig {
     companion object {
         private var BASE_URL = "https://reqres.in/api/"
+        private val isDebug = System.getenv("DEBUG")?.toBoolean() ?: false
 
         fun getApiService(): ApiService {
-            val loggingInterceptor = if (true) {
+            val loggingInterceptor = if (isDebug) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
